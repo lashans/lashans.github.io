@@ -1,0 +1,33 @@
+:root {
+    /* https://modernfontstacks.com/ */
+    --fontStackOldStyle: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    --fontStackHumanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+}
+
+.content {
+    display: grid;
+    justify-items: center;
+}
+
+.contact {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+.contact h1 {
+    font-family: var(--fontStackOldStyle);
+    text-align: center;
+}
+
+.contact span {
+    font-family: var(--fontStackOldStyle);
+    text-align: center;
+    font-style: italic;
+    display: block;
+}
+
+.portrait {
+    width: 150px;
+    border-radius: 50%;
+}
