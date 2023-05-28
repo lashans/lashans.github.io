@@ -2,26 +2,56 @@
     /* https://modernfontstacks.com/ */
     --fontStackOldStyle: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
     --fontStackHumanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    --fontColor: black;
+
+    --padding-xxs: 4px;
+    --padding-xs: 8px;
+    --padding-s: 16px;
+    --padding-m: 24px;
+    --padding-l: 32px;
+    --padding-xl: 64px;
+
+    --columnLayout: 1fr 2fr;
+}
+
+body {
+    font-family: var(--fontStackHumanist);
 }
 
 .content {
+    padding: var(--padding-m);
     display: grid;
-    justify-items: center;
+    grid-auto-flow: row;
+    gap: var(--padding-xl);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: var(--columnLayout);
+    gap: var(--padding-l);
 }
 
 .contact {
     display: grid;
-    align-content: center;
+    align-content: top;
     justify-items: center;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    gap: var(--padding-xxs);
+}
+
+.social-media-icons {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-rows: max-content;
+    gap: var(--padding-xs);
 }
 
 .contact h1 {
-    font-family: var(--fontStackOldStyle);
     text-align: center;
 }
 
 .contact span {
-    font-family: var(--fontStackOldStyle);
     text-align: center;
     font-style: italic;
     display: block;
@@ -30,4 +60,38 @@
 .portrait {
     width: 150px;
     border-radius: 50%;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: var(--columnLayout);
+    align-items: start;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.timeline {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    gap: var(--padding-s);
+}
+
+.timeline-card {
+    background-color: white;
+    border: 1px solid darkgray;
+    box-shadow: 4px 4px 4px darkgrey;
+    border-radius: var(--padding-xxs);
+    padding: var(--padding-xs);
+    transition: box-shadow 250ms
+}
+
+.timeline-card:hover {
+    box-shadow: 8px 8px 8px darkgrey;
+}
+
+.timeline-card-heading {
+    font-weight: bold;
 }
