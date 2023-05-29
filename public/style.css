@@ -2,7 +2,10 @@
     /* https://modernfontstacks.com/ */
     --fontStackOldStyle: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
     --fontStackHumanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-    --fontColor: black;
+    --fontStackClassicalHumanist:  Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+    --fontStackMonospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    --fontStackIndustrial: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+    --fontStackRoundedSans: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
 
     --padding-xxs: 4px;
     --padding-xs: 8px;
@@ -11,24 +14,56 @@
     --padding-l: 32px;
     --padding-xl: 64px;
 
-    --columnLayout: 1fr 2fr;
+    --horizontal-content-padding: 0 var(--padding-m);
+
+    --column-layout: 1fr 2fr;
+
+    --font-size-body: 18px;
+
+    --primary-color: teal;
+    --shadow-color: lightgrey;
+    --font-color: #001f20;
+    --font-color-inverse: white;
+    --shadow-color: lightgrey;
 }
 
 body {
-    font-family: var(--fontStackHumanist);
+    font-family: var(--fontStackRoundedSans);
+    font-size: var(--font-size-body);
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    background-color: ghostwhite;
+    margin: 0;
 }
 
 .content {
-    padding: var(--padding-m);
+    background-color: white;
+    max-width: 1280px;
+    height: 100vh;
+    padding: var(--padding-m) 0;
     display: grid;
     grid-auto-flow: row;
     gap: var(--padding-xl);
+    box-sizing: border-box;
+    overflow: scroll;
+
+    /* Hide scrollbar */
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.content::-webkit-scrollbar {
+    display: none;
+  }
 
 .about {
     display: grid;
-    grid-template-columns: var(--columnLayout);
+    grid-template-columns: var(--column-layout);
     gap: var(--padding-l);
+    padding: var(--horizontal-content-padding);
 }
 
 .contact {
@@ -38,6 +73,7 @@ body {
     grid-auto-flow: row;
     grid-auto-rows: max-content;
     gap: var(--padding-xxs);
+    padding: var(--horizontal-content-padding);
 }
 
 .social-media-icons {
@@ -45,6 +81,12 @@ body {
     grid-auto-flow: column;
     grid-auto-rows: max-content;
     gap: var(--padding-xs);
+}
+
+.social-media-icon {
+    width: 32px;
+    height: 32px;
+    fill: var(--primary-color)
 }
 
 .contact h1 {
@@ -60,12 +102,28 @@ body {
 .portrait {
     width: 150px;
     border-radius: 50%;
+    box-shadow: 2px 2px 2px var(--shadow-color);
+}
+
+.skills {
+    background-color: var(--primary-color);
+    color: var(--font-color-inverse);
+    display: grid;
+    grid-template-columns: var(--column-layout);
+    gap: var(--padding-l);
+    padding: var(--horizontal-content-padding);
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .timeline-container {
     display: grid;
-    grid-template-columns: var(--columnLayout);
+    grid-template-columns: var(--column-layout);
     align-items: start;
+    padding: var(--horizontal-content-padding);
 }
 
 .section-heading {
@@ -81,17 +139,21 @@ body {
 
 .timeline-card {
     background-color: white;
-    border: 1px solid darkgray;
-    box-shadow: 4px 4px 4px darkgrey;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 4px 4px 4px var(--shadow-color);
     border-radius: var(--padding-xxs);
-    padding: var(--padding-xs);
+    padding: var(--padding-s);
     transition: box-shadow 250ms
 }
 
 .timeline-card:hover {
-    box-shadow: 8px 8px 8px darkgrey;
+    box-shadow: 8px 8px 8px var(--shadow-color);
 }
 
 .timeline-card-heading {
     font-weight: bold;
+}
+
+.timeline-card-subheading {
+    font-size: calc(var(--font-size-body) - 2px);
 }
