@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="timeline.css">
     <title>Lasse Hansen</title>
 </head>
 
 <body>
     <div class="content">
+        <div class="header">
+            <a href="#">> About me</a>
+            <a href="#skills">> Skills</a>
+            <a href="#experience">> Experience</a>
+        </div>
         <div class="about">
             <div class="contact">
                 <img class="portrait" src="lasse.jpg" />
@@ -43,7 +47,7 @@
             </div>
         </div>
 
-        <div class="skills">
+        <div class="skills" id="skills">
             <h1>Skills</h1>
             <div class="skills-list">
                 <div>
@@ -66,6 +70,8 @@
                         <li>GraphQL</li>
                         <li>Flutter</li>
                         <li>iOS SDK</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
                     </ul>
                 </div>
                 <div>
@@ -87,7 +93,7 @@
             </div>
         </div>
 
-        <div class="timeline-container">
+        <div class="timeline-container" id="experience">
             <h1 class="section-heading">Experience</h1>
             <div class="timeline">
                 <div class="timeline-card">
@@ -117,8 +123,7 @@
                     <div class="timeline-card-subheading">
                         2016-2027 - I.C.N.H GmbH
                     </div>
-                    <p>Fullstack development in React and node.js</p>
-                    <p>Cross-platform development in Flutter</p>
+                    <p>iOS development in Swift</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-card-heading">
@@ -142,7 +147,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 

@@ -15,8 +15,11 @@
     --padding-xl: 64px;
 
     --horizontal-content-padding: 0 var(--padding-m);
-
     --column-layout: 1fr 2fr;
+
+    --header-height: 32px;
+    --max-content-width: 1280px;
+
 
     --font-size-body: 18px;
 
@@ -30,6 +33,7 @@
 body {
     font-family: var(--fontStackRoundedSans);
     font-size: var(--font-size-body);
+    line-height: calc(var(--font-size-body) * 1.5);
     color: var(--font-color);
     display: flex;
     justify-content: center;
@@ -37,15 +41,35 @@ body {
     margin: 0;
 }
 
+.header {
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    color: var(--font-color-inverse);
+    padding: 0 var(--padding-s);
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: var(--padding-s);
+    align-items: center;
+}
+
+.header a {
+    color: var(--font-color-inverse);
+    text-decoration: none;
+}
+
 .content {
     background-color: white;
-    max-width: 1280px;
+    max-width: var(--max-content-width);
     height: 100vh;
-    padding: var(--padding-m) 0;
+    /* padding: 0 var(--padding-m) 0; */
+    padding-bottom: var(--padding-m);
     display: grid;
     grid-auto-flow: row;
     gap: var(--padding-xl);
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     overflow: scroll;
 
     /* Hide scrollbar */
