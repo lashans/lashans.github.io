@@ -41,9 +41,12 @@ body {
 }
 
 .header {
-    position: sticky;
+    position: absolute;
     top: 0;
     height: var(--header-height);
+    width: 100%;
+    max-width: var(--max-content-width);
+    box-sizing: border-box;
     background-color: var(--primary-color);
     color: var(--font-color-inverse);
     padding: 0 var(--padding-s);
@@ -63,12 +66,12 @@ body {
     background-color: white;
     max-width: var(--max-content-width);
     height: 100vh;
-    /* padding: 0 var(--padding-m) 0; */
+    padding-top: calc(var(--header-height) + var(--padding-m));
     padding-bottom: var(--padding-m);
     display: grid;
     grid-auto-flow: row;
     gap: var(--padding-xl);
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     overflow: scroll;
 
     /* Hide scrollbar */

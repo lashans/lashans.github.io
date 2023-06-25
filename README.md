@@ -2,7 +2,6 @@
 
 ## Serve locally with hot reload
 
-    cd public
     npx live-server
 
 
