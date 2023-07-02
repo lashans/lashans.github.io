@@ -71,7 +71,7 @@ body {
     padding-bottom: var(--padding-m);
     display: grid;
     grid-auto-flow: row;
-    gap: var(--padding-xl);
+    gap: var(--padding-l);
     box-sizing: border-box;
     overflow: scroll;
 
